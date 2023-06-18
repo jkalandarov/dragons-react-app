@@ -27,7 +27,7 @@ const DragonCard =(props: DragonCardType) => {
         <Card.Text>{props.description}</Card.Text>
         <Card.Subtitle style={{fontSize: '12px', marginBottom: '8px'}}>Size: Huge</Card.Subtitle>
         <Card.Subtitle style={{fontSize: '12px', marginBottom: '8px'}}>Languages: {props.languages ?? "Common dragon language"}</Card.Subtitle>
-        <Button variant="primary">More info</Button>
+        <Button variant="primary" >More info</Button>
       </Card.Body>
     </Card>
   );
