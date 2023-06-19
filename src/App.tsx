@@ -1,14 +1,48 @@
-import React from 'react';
 import './App.css';
-import DragonCard from './components/Card';
+import { DragonCardType } from './components/Card';
+import DragonList from './components/List';
+
+const dragonsList: DragonCardType[] = [
+  {
+    name: 'Adult Black Dragon',
+    description: 'Huge black dragon',
+    languages: 'Common, Draconic',
+    imgSrc: '/api/images/monsters/adult-black-dragon.png',
+    link: '/api/monsters/adult-black-dragon'
+  },
+  {
+    name: 'Adult Black Dragon',
+    description: 'Huge black dragon',
+    languages: 'Common, Draconic',
+    imgSrc: '/api/images/monsters/adult-black-dragon.png',
+    link: '/api/monsters/adult-black-dragon'
+  },
+  {
+    name: 'Adult Black Dragon',
+    description: 'Huge black dragon',
+    languages: 'Common, Draconic',
+    imgSrc: '/api/images/monsters/adult-black-dragon.png',
+    link: '/api/monsters/adult-black-dragon'
+  },
+  {
+    name: 'Adult Black Dragon',
+    description: 'Huge black dragon',
+    languages: 'Common, Draconic',
+    imgSrc: '/api/images/monsters/adult-black-dragon.png',
+    link: '/api/monsters/adult-black-dragon'
+  },
+  {
+    name: 'Adult Black Dragon',
+    description: 'Huge black dragon',
+    languages: 'Common, Draconic',
+    imgSrc: '/api/images/monsters/adult-black-dragon.png',
+    link: '/api/monsters/adult-black-dragon'
+  },
+]
 
 function App() {
   return (
-    <DragonCard 
-      name='Some dragon' 
-      description='Some description' 
-      imgSrc='/api/images/monsters/adult-black-dragon.png'
-    />
+    <DragonList dragons={dragonsList}/>
   );
 }
 
