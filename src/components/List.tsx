@@ -1,25 +1,26 @@
 import DragonCard from "./Card";
 import { DragonCardType } from "./Card";
+import { Row } from "react-bootstrap";
 
 type DragonsList = {
   dragons: DragonCardType[];
-}
+};
 
-export const DragonList = (props: DragonsList) => {
+const DragonList = (props: DragonsList) => {
   return (
-    <ul>
-      {
-        props.dragons.map(dragon => { 
-        return <DragonCard
+    <Row>
+      {props.dragons.map((dragon) => (
+        <DragonCard
           name={dragon.name}
           description={dragon.description}
           imgSrc={dragon.imgSrc}
           key={dragon.name}
           languages={dragon.languages}
           link={dragon.link}
-        /> 
-      })
-      }
-    </ul>
-  )
-}
+        />
+      ))}
+    </Row>
+  );
+};
+
+export default DragonList;
