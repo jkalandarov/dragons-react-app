@@ -1,4 +1,3 @@
-import DragonCard from "./Card";
 import { DragonCardType } from "./Card";
 import { Row } from "react-bootstrap";
 import SmallCard from "./SmallCard";
@@ -16,6 +15,7 @@ const DragonList = (props: DragonsList) => {
           description={dragon.description}
           imgUrl={dragon.imgSrc!}
           key={dragon.name}
+          url={dragon.link!}
         />
       ))}
     </Row>

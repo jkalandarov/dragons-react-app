@@ -1,8 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+//@ts-ignore
 import dragonImg from "../images/dragon.png";
-import { Col } from 'react-bootstrap';
+import { Col } from "react-bootstrap";
 
 export type DragonCardType = {
   name: string;
@@ -10,31 +11,37 @@ export type DragonCardType = {
   imgSrc?: string;
   link?: string;
   languages?: string;
-}
+};
 
-const DragonCard =(props: DragonCardType) => {
+const DragonCard = (props: DragonCardType) => {
   return (
     <Col md={3}>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img 
-          variant="top" 
+      <Card style={{ width: "18rem" }}>
+        <Card.Img
+          variant="top"
           src={
-            props.imgSrc 
-              ? 'https://www.dnd5eapi.co' + props.imgSrc 
-              : dragonImg
-            } 
-          />
+            props.imgSrc ? "https://www.dnd5eapi.co" + props.imgSrc : dragonImg
+          }
+        />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
           <Card.Text>{props.description}</Card.Text>
-          <Card.Subtitle style={{fontSize: '12px', marginBottom: '8px'}}>Size: Huge</Card.Subtitle>
-          <Card.Subtitle style={{fontSize: '12px', marginBottom: '8px'}}>Languages: {props.languages ?? "Common dragon language"}</Card.Subtitle>
-          <Button variant="primary" href={`https://www.dnd5eapi.co${props.link}`}>More info</Button>
+          <Card.Subtitle style={{ fontSize: "12px", marginBottom: "8px" }}>
+            Size: Huge
+          </Card.Subtitle>
+          <Card.Subtitle style={{ fontSize: "12px", marginBottom: "8px" }}>
+            Languages: {props.languages ?? "Common dragon language"}
+          </Card.Subtitle>
+          <Button
+            variant="primary"
+            href={`https://www.dnd5eapi.co${props.link}`}
+          >
+            More info
+          </Button>
         </Card.Body>
       </Card>
     </Col>
-    
   );
-}
+};
 
 export default DragonCard;

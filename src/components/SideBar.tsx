@@ -1,6 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
-import DragonList from "./List";
 import { dragonsList } from "../data/dragonsList";
+import SmallCard from "./SmallCard";
 
 export default function Sidebar() {
   return (
@@ -9,22 +8,15 @@ export default function Sidebar() {
         <h1>React Router Contacts</h1>
         <div>
           <form id="search-form" role="search">
-            <input 
-              type="search" 
+            <input
+              type="search"
               id="q"
               aria-label="Search contacts"
               placeholder="Search"
               name="q"
             />
-            <div 
-              id="search-spinner"
-              aria-hidden
-              hidden={true}
-            />
-            <div 
-              className="sr-only"
-              aria-live="polite"
-            ></div>
+            <div id="search-spinner" aria-hidden hidden={true} />
+            <div className="sr-only" aria-live="polite"></div>
           </form>
           <form method="post">
             <button type="submit">New</button>
@@ -32,13 +24,18 @@ export default function Sidebar() {
         </div>
         <nav>
           <ul>
-            <DragonList dragons={dragonsList}/>
+            {dragonsList.map((dragon) => (
+              <SmallCard
+                name={dragon.name}
+                description={dragon.description}
+                key={dragon.name}
+                imgUrl={dragon.imgSrc!}
+                url={dragon.link!}
+              />
+            ))}
           </ul>
         </nav>
       </div>
-      <div id="detail">
-        <Outlet />
-      </div>
     </>
-  )
+  );
 }
