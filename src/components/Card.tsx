@@ -1,46 +1,54 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-//@ts-ignore
-import dragonImg from "../images/dragon.png";
-import { Col } from "react-bootstrap";
-
 export type DragonCardType = {
   name: string;
   description: string;
-  imgSrc?: string;
+  imgUrl?: string;
   link?: string;
   languages?: string;
 };
 
 const DragonCard = (props: DragonCardType) => {
   return (
-    <Col md={3}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img
-          variant="top"
-          src={
-            props.imgSrc ? "https://www.dnd5eapi.co" + props.imgSrc : dragonImg
-          }
-        />
-        <Card.Body>
-          <Card.Title>{props.name}</Card.Title>
-          <Card.Text>{props.description}</Card.Text>
-          <Card.Subtitle style={{ fontSize: "12px", marginBottom: "8px" }}>
-            Size: Huge
-          </Card.Subtitle>
-          <Card.Subtitle style={{ fontSize: "12px", marginBottom: "8px" }}>
-            Languages: {props.languages ?? "Common dragon language"}
-          </Card.Subtitle>
-          <Button
-            variant="primary"
-            href={`https://www.dnd5eapi.co${props.link}`}
-          >
-            More info
-          </Button>
-        </Card.Body>
-      </Card>
-    </Col>
+    <div className="main-content-container">
+      <div className="img-container">
+        <img src={props.imgUrl} alt={props.name} />
+      </div>
+      <h2>{props.name}</h2>
+      <div className="content-body">
+        <div className="content-description">{props.description}</div>
+      </div>
+      <div className="dragon-stats">
+        <span>Size: </span>
+        <span>Type: </span>
+        <span>Armor: </span>
+        <ul>
+          <p>Speed</p>
+          <li>Blindsight: </li>
+          <li>Darkvision: </li>
+          <li>Passive perception: </li>
+        </ul>
+        <span>Strength: </span>
+        <span>Wisdom: </span>
+        <span>Charisma: </span>
+        <ul>
+          <p>Senses</p>
+          <li>Blindsight: </li>
+          <li>Darkvision: </li>
+          <li>Passive perception: </li>
+        </ul>
+        <ul>
+          <p>Special abilities</p>
+          <li>Blindsight: </li>
+          <li>Darkvision: </li>
+          <li>Passive perception: </li>
+        </ul>
+        <ul>
+          <p>Legendary actions</p>
+          <li>Blindsight: </li>
+          <li>Darkvision: </li>
+          <li>Passive perception: </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 

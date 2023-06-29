@@ -29,7 +29,7 @@ export default function Sidebar() {
                 name={dragon.name}
                 description={dragon.description}
                 key={dragon.name}
-                imgUrl={dragon.imgSrc!}
+                imgUrl={dragon.imgUrl!}
                 url={dragon.link!}
               />
             ))}

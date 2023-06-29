@@ -13,7 +13,7 @@ const DragonList = (props: DragonsList) => {
         <SmallCard
           name={dragon.name}
           description={dragon.description}
-          imgUrl={dragon.imgSrc!}
+          imgUrl={dragon.imgUrl!}
           key={dragon.name}
           url={dragon.link!}
         />
